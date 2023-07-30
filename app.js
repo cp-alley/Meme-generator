@@ -1,26 +1,42 @@
+
+const form = document.querySelector("form")
+const imgSrc = document.querySelector("input[name='img-src']")
+const topText = document.querySelector("input[name='top-text']")
+const bottomText = document.querySelector("input[name='bottom-text']")
 const gallery = document.querySelector(".gallery")
 
-function addNewMeme(src, text1, text2) {
-  const newMeme = document.createElement("div")
-  newMeme.classList.add("meme")
+form.addEventListener("submit", function(event){
+  event.preventDefault();
+  const newMeme = addNewMeme(
+    imgSrc.value,
+    topText.value,
+    bottomText.value
+  );
+  gallery.append(newMeme);
+  imgSrc.value = '';
+  topText.value = '';
+  bottomText.value = '';
+});
+
+function addNewMeme(src, textTop, textBot) {
+  const memeDiv = document.createElement("div")
+  memeDiv.classList.add("meme")
   const newImg = document.createElement("img")
   newImg.setAttribute("src", src)
   const newTop = document.createElement("div")
   newTop.classList.add("top-text")
-  if (text1 === undefined) {
+  if (textTop === undefined) {
     newTop.innerText = ""
   } else {
-    newTop.innerText = text1
+    newTop.innerText = textTop
   }
   const newBottom = document.createElement("div")
   newBottom.classList.add("bottom-text")
-  if (text2 === undefined) {
+  if (textBot === undefined) {
     newBottom.innerText = ""
   } else {
-    newBottom.innerText = text2
+    newBottom.innerText = textBot
   }
-  newMeme.append(newImg, newTop, newBottom)
-  gallery.append(newMeme)
+  memeDiv.append(newImg, newTop, newBottom);
+  return memeDiv;
 }
-
-addNewMeme("https://imgflip.com/s/meme/Waiting-Skeleton.jpg", "test", "test")
