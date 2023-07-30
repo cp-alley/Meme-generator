@@ -40,3 +40,8 @@ function addNewMeme(src, textTop, textBot) {
   memeDiv.append(newImg, newTop, newBottom);
   return memeDiv;
 }
+
+gallery.addEventListener('click', function(event){
+  const deleteDiv = event.target.parentElement;
+  deleteDiv.remove();
+});
