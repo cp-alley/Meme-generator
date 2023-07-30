@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  background-color: ivory;
+}
+
+h1 {
+  margin: 1em auto;
+  text-align: center;
+}
+
+fieldset {
+  width: 75%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.form {
+  padding: 10px 0 0 5px;
+}
+
+.form input, .form label {
+  display: inline-block;
+}
+
+.form input {
+  width: 50%;
+  text-align: left;
+}
+
+.form label {
+  text-align: right;
+  width: 20%;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 20%;
+  margin: 1em auto;
+  height: 2em;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+  padding: 20px 10px;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 400px;
+  object-fit: contain;
+}
+
+.meme {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.meme:hover {
+  opacity: 50%;
+}
+
+div.top-text, div.bottom-text {
+  position: absolute;
+  font-family: Impact;
+  color: white;
+  text-shadow: -1px 1px 0 #000,
+    1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+div.top-text {
+  top: 1px;
+}
+
+div.bottom-text {
+  bottom: 1px;
+}

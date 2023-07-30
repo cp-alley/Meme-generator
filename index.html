@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meme Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Meme Generator</h1>
+
+  <form action="">
+    <fieldset>
+      <legend>Choose your image and create your text!</legend>
+      <div class="form">
+        <label for="img-src">Image URL:</label>
+        <input type="url" name="img-src" id="img-src" placeholder="Enter URL">
+      </div>
+      <div class="form">
+        <label for="top-text">Top text:</label>
+        <input type="text" name="top-text" id="top-text" placeholder="(optional) Enter your text here">
+      </div>
+      <div class="form">
+        <label for="bottom-text">Bottom text:</label>
+        <input type="text" name="bottom-text" id="bottom-text" placeholder="(optional) Enter your text here">
+      </div>
+      <input type="submit" value="Generate!">
+    </fieldset>
+  </form>
+  <div class="gallery">
+    <div class="meme">
+      <img src="https://imgflip.com/s/meme/First-Day-On-The-Internet-Kid.jpg" alt="">
+      <div class="top-text">I know how to make memes now!</div>
+      <div class="bottom-text">Bottom text here</div>
+    </div>
+    <div class="meme">
+      <img src="https://imgflip.com/s/meme/Imagination-Spongebob.jpg" alt="">
+      <div class="top-text"></div>
+      <div class="bottom-text">Corporations every June</div>
+    </div>
+    <div class="meme">
+      <img src="https://imgflip.com/s/meme/Disaster-Girl.jpg" alt="">
+      <div class="top-text">They said it was too hot to play outside</div>
+      <div class="bottom-text">now it's too hot to play inside</div>
+    </div>
+    <div class="meme">
+      <img src="https://imgflip.com/s/meme/This-Is-Where-Id-Put-My-Trophy-If-I-Had-One.jpg" alt="">
+      <div class="top-text">This is where I'd put my life</div>
+      <div class="bottom-text">If I had one</div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
