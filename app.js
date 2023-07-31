@@ -18,28 +18,44 @@ form.addEventListener("submit", function(event){
   bottomText.value = '';
 });
 
-function addNewMeme(src, textTop, textBot) {
-  const memeDiv = document.createElement("div")
-  memeDiv.classList.add("meme")
-  const newImg = document.createElement("img")
-  newImg.setAttribute("src", src)
-  const newTop = document.createElement("div")
-  newTop.classList.add("top-text")
-  if (textTop === undefined) {
-    newTop.innerText = ""
+function addNewMeme(src, text1, text2){
+  const newMemeDiv = newImgDiv(src);
+  const topTextDiv = newTopText(text1);
+  const botTextDiv = newBotText(text2);
+  newMemeDiv.append(topTextDiv, botTextDiv);
+  return newMemeDiv;
+};
+
+function newImgDiv(src){
+  const imgDiv = document.createElement("div");
+  imgDiv.classList.add("meme");
+  const newImg = document.createElement("img");
+  newImg.setAttribute("src", src);
+  imgDiv.append(newImg);
+  return imgDiv;
+};
+
+function newTopText(text){
+  const newTop = document.createElement("div");
+  newTop.classList.add("top-text");
+  if (text === undefined) {
+    newTop.innerText = "";
   } else {
-    newTop.innerText = textTop
+    newTop.innerText = text;
   }
-  const newBottom = document.createElement("div")
-  newBottom.classList.add("bottom-text")
-  if (textBot === undefined) {
-    newBottom.innerText = ""
+  return newTop;
+};
+
+function newBotText(text){
+  const newBot = document.createElement("div");
+  newBot.classList.add("bottom-text");
+  if (text === undefined) {
+    newBot.innerText = "";
   } else {
-    newBottom.innerText = textBot
+    newBot.innerText = text;
   }
-  memeDiv.append(newImg, newTop, newBottom);
-  return memeDiv;
-}
+  return newBot;
+};
 
 gallery.addEventListener('click', function(event){
   const deleteDiv = event.target.parentElement;
